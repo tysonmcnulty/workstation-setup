@@ -16,7 +16,7 @@ asdf global nodejs "${NODEJS_VERSION}"
 fi
 
 # poetry/python
-if ! command -v python3; then
+if ! command -v python; then
 brew install openssl readline sqlite3 xz zlib tcl-tk
 asdf plugin add poetry
 POETRY_VERSION=$(asdf latest poetry)
