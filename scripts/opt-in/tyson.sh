@@ -8,29 +8,25 @@ brew install spotify
 brew install textmate
 
 # node
-if ! command -v node; then
 asdf plugin add nodejs
 NODEJS_VERSION=$(asdf latest nodejs 18)
 asdf install nodejs "${NODEJS_VERSION}"
 asdf global nodejs "${NODEJS_VERSION}"
-fi
 
 # poetry/python
-if ! command -v python; then
 brew install openssl readline sqlite3 xz zlib tcl-tk
-asdf plugin add poetry
-POETRY_VERSION=$(asdf latest poetry)
-asdf install poetry "${POETRY_VERSION}"
-asdf global poetry "${POETRY_VERSION}"
 
 asdf plugin add python
 PYTHON_VERSION=$(asdf latest python 3)
 asdf install python "${PYTHON_VERSION}"
 asdf global python "${PYTHON_VERSION}"
-fi
+
+asdf plugin add poetry
+POETRY_VERSION=$(asdf latest poetry)
+asdf install poetry "${POETRY_VERSION}"
+asdf global poetry "${POETRY_VERSION}"
 
 # java
-if ! command -v java; then
 asdf plugin add java
 if [ ! -f ~/.asdfrc ]; then cat > ~/.asdfrc <<EOF
 java_macos_integration_enable = yes
@@ -39,7 +35,6 @@ fi
 JAVA_VERSION=$(asdf latest java temurin-17)
 asdf install java "${JAVA_VERSION}"
 asdf global java "${JAVA_VERSION}"
-fi
 
 # git-together
 if [ ! -f ~/.git-together ]; then
@@ -68,7 +63,7 @@ source \$ZSH/oh-my-zsh.sh
 source ~/.asdf/plugins/java/set-java-home.zsh
 
 #direnv
-eval "$(direnv hook zsh)"
+eval "\$(direnv hook zsh)"
 
 #git-together
 compdef git-together=git
