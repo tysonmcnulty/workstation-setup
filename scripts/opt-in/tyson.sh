@@ -63,7 +63,7 @@ source \$ZSH/oh-my-zsh.sh
 source ~/.asdf/plugins/java/set-java-home.zsh
 
 #direnv
-eval "\$(direnv hook zsh)"
+eval "\$\(direnv hook zsh\)"
 
 #git-together
 compdef git-together=git
