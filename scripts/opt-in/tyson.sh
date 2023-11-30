@@ -3,7 +3,7 @@
 # programs
 brew install asdf
 brew install kejadlen/git-together/git-together
-brew install intellij-idea
+brew install jetbrains-toolbox
 brew install spotify
 brew install textmate
 
