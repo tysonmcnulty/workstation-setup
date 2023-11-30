@@ -8,7 +8,7 @@ brew install spotify
 brew install textmate
 
 # node
-if [ ! command -v node ]; then
+if ! command -v node; then
 asdf plugin add nodejs
 NODEJS_VERSION=$(asdf latest nodejs 18)
 asdf install nodejs "${NODEJS_VERSION}"
@@ -16,7 +16,7 @@ asdf global nodejs "${NODEJS_VERSION}"
 fi
 
 # poetry/python
-if [ ! command -v python3 ]; then
+if ! command -v python3; then
 brew install openssl readline sqlite3 xz zlib tcl-tk
 asdf plugin add poetry
 POETRY_VERSION=$(asdf latest poetry)
@@ -30,7 +30,7 @@ asdf global python "${PYTHON_VERSION}"
 fi
 
 # java
-if [ ! command -v java ]; then
+if ! command -v java; then
 asdf plugin add java
 if [ ! -f ~/.asdfrc ]; then cat > ~/.asdfrc <<EOF
 java_macos_integration_enable = yes
